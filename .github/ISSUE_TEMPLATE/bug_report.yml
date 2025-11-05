@@ -1,0 +1,68 @@
+﻿name: "Reportar bug"
+description: "Reporte um problema ou comportamento inesperado"
+title: "bug: <tÃ­tulo curto>"
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar um bug! Preencha as informaÃ§Ãµes abaixo para facilitar a reproduÃ§Ã£o e correÃ§Ã£o.
+  - type: input
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Descreva brevemente o contexto em que o bug ocorre.
+      placeholder: Ex. Durante login no mÃ³dulo Auth
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Liste os passos, resultados esperados e observados.
+      placeholder: |
+        1. Ir para ...
+        2. Clicar em ...
+        3. Ver ...
+        Resultado esperado: ...
+        Resultado observado: ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs/Stacktrace
+      description: Inclua trechos relevantes de logs, mensagens de erro ou stacktrace.
+      render: shell
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Informe versÃ£o do .NET, SO, e se usa contÃªiner (Podman/Docker).
+      placeholder: Ex. .NET 8, Windows 11, Podman Compose
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: MÃ³dulo afetado
+      options:
+        - Service.Api
+        - Module.Auth
+        - Module.Wallet
+        - Module.Marketplace
+        - Outro/Indefinido
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options:
+        - baixa
+        - mÃ©dia
+        - alta
+        - crÃ­tica
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Verifiquei se jÃ¡ existe issue similar
+        - label: IncluÃ­ passos claros de reproduÃ§Ã£o
+        - label: IncluÃ­ logs/erros relevantes

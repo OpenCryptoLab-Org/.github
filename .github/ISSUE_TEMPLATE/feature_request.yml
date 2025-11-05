@@ -1,0 +1,54 @@
+﻿name: "SolicitaÃ§Ã£o de recurso"
+description: "Proponha uma nova funcionalidade ou melhoria"
+title: "feat: <tÃ­tulo curto>"
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por sugerir uma melhoria! Ajude-nos a entender o problema e a soluÃ§Ã£o proposta.
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+      description: Qual necessidade ou dor esta funcionalidade resolve?
+      placeholder: Ex. UsuÃ¡rios nÃ£o conseguem...
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta
+      description: Descreva a soluÃ§Ã£o sugerida e como deve funcionar.
+      placeholder: Ex. Adicionar endpoint X com parÃ¢metros Y...
+    validations:
+      required: true
+  - type: textarea
+    id: alternativa
+    attributes:
+      label: Alternativas consideradas
+      description: Liste soluÃ§Ãµes alternativas e por que foram descartadas.
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: MÃ³dulo relacionado
+      options:
+        - Service.Api
+        - Module.Auth
+        - Module.Wallet
+        - Module.Marketplace
+        - Outro/Indefinido
+  - type: textarea
+    id: impactos
+    attributes:
+      label: Impactos/Compatibilidade
+      description: PossÃ­veis breaking changes, migraÃ§Ãµes de banco, ajustes de configuraÃ§Ã£o.
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: DocumentaÃ§Ã£o atualizada (README, API docs)
+        - label: Testes automatizados cobrindo a funcionalidade
+        - label: SeguranÃ§a e privacidade revisadas
